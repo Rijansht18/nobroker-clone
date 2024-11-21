@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { Outlet, useLocation } from "react-router-dom";
 import Navb from "./components/Navbar/Navb";
 import Footer from "./components/Footer/Footer";

@@ -108,7 +108,7 @@ const CheckEligibility = ({ selectedOption }) => {
   ];
 
   return (
-    <>
+    <div className="hidden md:block">
       <div className="text-sm mt-4">
         {selectedOption === "Buy" || selectedOption === "Rent" ? (
           <div className="bg-[#384d6c] p-3.5 flex items-center justify-center gap-2.5">
@@ -143,13 +143,13 @@ const CheckEligibility = ({ selectedOption }) => {
         ) : null}
       </div>
 
-      <div className="flex justify-between items-end text-sm overflow-x-auto gap-4">
+      <div className="flex justify-between items-end text-sm overflow-x-auto gap-4 px-20">
         {(selectedOption === "Buy" ? buyData : rentData).map((item) => (
           <Link
             to={`/${item.text.toLowerCase().replaceAll(" ", "-")}`}
             key={item.id}
           >
-            <div className="flex flex-col md:justify-center items-center text-center p-4 cursor-pointer border rounded-tl-2xl rounded-br-2xl">
+            <div className="flex flex-col md:justify-center items-center text-center p-2 cursor-pointer border md:border-0 rounded-tl-2xl rounded-br-2xl">
               {item.condition && (
                 <span className="text-xs bg-orange-200/50 px-2 py-1 rounded-2xl mb-1 w-fit">
                   {item.condition}
@@ -169,7 +169,7 @@ const CheckEligibility = ({ selectedOption }) => {
       <div className="py-10">
         <div className="flex flex-nowrap items-center justify-center gap-4">
           <hr className="w-full" />
-          <h2>Who&nbsp;use&nbsp;NoBroker</h2>
+          <h2 className="opacity-60">Why&nbsp;use&nbsp;NoBroker</h2>
           <hr className="w-full" />
         </div>
         <div>
@@ -183,7 +183,7 @@ const CheckEligibility = ({ selectedOption }) => {
                     className="mr-0 w-auto h-auto hover:scale-125 transition duration-300"
                   />
                   <div className="">{item.heading}</div>
-                  <span className="text-sm">{item.text}</span>
+                  <span className="text-sm w-8/12">{item.text}</span>
                 </div>
               </Link>
             ))}
@@ -244,7 +244,7 @@ const CheckEligibility = ({ selectedOption }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
